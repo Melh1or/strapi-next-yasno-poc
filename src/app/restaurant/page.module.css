@@ -1,0 +1,28 @@
+.layout {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItem {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.contentInner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
