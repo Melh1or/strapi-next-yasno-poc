@@ -2,6 +2,8 @@ import s from "./page.module.css";
 import { getHome } from "@/api/home";
 import { BASE_FILE_URL } from "@/utils/api";
 
+export const revalidate = 5;
+
 export default async function Home() {
   const home = await getHome();
   console.log(home.data?.attributes.Image?.data.attributes.url);
@@ -11,7 +13,7 @@ export default async function Home() {
       <h1 className={s.title}>{home.data?.attributes.Title}</h1>
       <img
         className={s.titleImg}
-        src={BASE_FILE_URL + home.data?.attributes.Image?.data.attributes.url}
+        src={BASE_FILE_URL + home.data?.attributes.Image?.data?.attributes.url}
       />
       <h2 className={s.subTitle}>{home.data?.attributes.SubTitle}</h2>
 
@@ -47,7 +49,7 @@ export default async function Home() {
             className={s.quoteImg}
             src={
               BASE_FILE_URL +
-              home.data?.attributes.QuoteImage?.data.attributes.url
+              home.data?.attributes.QuoteImage?.data?.attributes.url
             }
           />
         </div>

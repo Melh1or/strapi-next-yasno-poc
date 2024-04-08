@@ -16,7 +16,7 @@ export type GetRestaurantsResponse = {
             name: string;
             url: string;
           };
-        }[];
+        };
       };
     };
   };

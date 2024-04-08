@@ -9,6 +9,7 @@ import Link from "next/link";
 
 export default async function Header() {
   const header = await getHeader();
+  console.log(header);
 
   return (
     <div className={s.header}>
@@ -19,8 +20,7 @@ export default async function Header() {
             width={100}
             height={50}
             src={
-              BASE_FILE_URL +
-              header?.data?.attributes.Logo.data[0].attributes?.url
+              BASE_FILE_URL + header?.data?.attributes.Logo.data.attributes?.url
             }
           />
         </Link>
