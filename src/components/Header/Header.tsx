@@ -16,7 +16,7 @@ export default async function Header() {
           alt=""
           width={100}
           height={50}
-          src={BASE_URL + header?.data?.attributes.Logo.data[0].attributes?.url}
+          src={header?.data?.attributes.Logo.data[0].attributes?.url}
         />
       </div>
 
