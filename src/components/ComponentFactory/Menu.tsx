@@ -8,13 +8,22 @@ const Menu = ({ Title, Menu }: MenuProps) => {
 
   return (
     <div
+      style={{ display: "inline-block", position: "relative" }}
       onMouseMove={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >
       {Title}
 
       {visible && (
-        <ul>
+        <ul
+          style={{
+            position: "absolute",
+            backgroundColor: "white",
+            padding: "1rem",
+            border: "1px solid black",
+            bottom: -70,
+          }}
+        >
           {Menu.map((item) => (
             <li key={item.id}>
               <a href={item.To}>{item.Title}</a>

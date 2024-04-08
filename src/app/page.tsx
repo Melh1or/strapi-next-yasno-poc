@@ -1,94 +1,56 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import s from "./page.module.css";
+import { getHome } from "@/api/home";
+import { BASE_FILE_URL } from "@/utils/api";
 
-export default function Home() {
+export default async function Home() {
+  const home = await getHome();
+  console.log(home.data?.attributes.Image?.data.attributes.url);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+    <main className={s.main}>
+      <h1 className={s.title}>{home.data?.attributes.Title}</h1>
+      <img
+        className={s.titleImg}
+        src={BASE_FILE_URL + home.data?.attributes.Image?.data.attributes.url}
+      />
+      <h2 className={s.subTitle}>{home.data?.attributes.SubTitle}</h2>
+
+      <div className={s.grid}>
+        <div className={s.gridEl}>
+          <h3>{home.data?.attributes.CabinetTitle}</h3>
+          <p>{home.data?.attributes.CabinetDescription}</p>
+          <a href={home.data?.attributes.CabinetLink}>
+            {home.data?.attributes.CabinetButton}
+          </a>
+        </div>
+
+        <div className={s.gridEl}>
+          <h3>{home.data?.attributes.AccountTitle}</h3>
+          <p>{home.data?.attributes.AccountDescription}</p>
+          <a href={home.data?.attributes.AccountLink}>
+            {home.data?.attributes.AccountButton}
           </a>
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <div className={s.quote}>
+        <h3 className={s.quoteTitle}>{home.data?.attributes.QuoteTitle}</h3>
+        <p className={s.quoteSubtitle}>{home.data?.attributes.QuoteSubTitle}</p>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <div className={s.quoteInner}>
+          <blockquote>
+            <cite>{home.data?.attributes.QuoteAuthor}</cite>
+            <p className={s.quoteText}>{home.data?.attributes.Quote}</p>
+          </blockquote>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <img
+            className={s.quoteImg}
+            src={
+              BASE_FILE_URL +
+              home.data?.attributes.QuoteImage?.data.attributes.url
+            }
+          />
+        </div>
       </div>
     </main>
   );
