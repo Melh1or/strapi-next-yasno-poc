@@ -2,6 +2,8 @@ import { getHeader } from "@/api/header";
 import ComponentFactory from "../ComponentFactory";
 import { BASE_URL } from "@/utils/api";
 
+export const revalidate = 5;
+
 import s from "./Header.module.css";
 
 export default async function Header() {

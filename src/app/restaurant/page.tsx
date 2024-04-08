@@ -2,11 +2,11 @@ import { getRestaurants } from "@/api/restaurants";
 import { getCategories } from "@/api/categories";
 import s from "./page.module.css";
 
+export const revalidate = 5;
+
 const Restaurant = async () => {
   const restaurants = await getRestaurants();
   const categories = await getCategories();
-
-  console.log({ restaurants, categories });
 
   return (
     <div className={s.layout}>
