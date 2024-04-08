@@ -6,6 +6,7 @@ import s from "./Header.module.css";
 
 export default async function Header() {
   const header = await getHeader();
+  console.log(header);
 
   return (
     <div className={s.header}>

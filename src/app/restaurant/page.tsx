@@ -6,6 +6,8 @@ const Restaurant = async () => {
   const restaurants = await getRestaurants();
   const categories = await getCategories();
 
+  console.log({ restaurants, categories });
+
   return (
     <div className={s.layout}>
       <h1 className={s.header}>Services</h1>
