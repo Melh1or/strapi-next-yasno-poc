@@ -15,9 +15,9 @@ export default async function Page({ params: { slug } }: PageProps) {
   return (
     <div>
       <h1>Page - {slug}</h1>
-      <h2>{page.attributes.Title}</h2>
+      <h2>{page?.attributes.Title}</h2>
 
-      {page.attributes.Content.map((component) => (
+      {page?.attributes.Content.map((component) => (
         <ComponentFactory {...component} />
       ))}
     </div>
