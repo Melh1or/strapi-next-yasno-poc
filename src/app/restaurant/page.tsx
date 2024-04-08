@@ -15,7 +15,7 @@ const Restaurant = async () => {
           <ul className={s.list}>
             {restaurants.data.map((restaurant) => (
               <li key={restaurant.id} className={s.listItem}>
-                {restaurant.attributes.Name}
+                {restaurant?.attributes.Name}
               </li>
             ))}
           </ul>
