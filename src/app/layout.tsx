@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import BlackoutSchedule from "@/components/BlackoutSchedule";
 import localFont from "next/font/local";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         <BlackoutSchedule />
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

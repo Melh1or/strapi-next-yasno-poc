@@ -1,14 +1,15 @@
 import s from "./page.module.css";
 import { getHome } from "@/api/home";
 import Icon from "@/components/Icon";
+import VerticalAccordion from "@/components/VerticalAccordion";
 import { BASE_FILE_URL } from "@/utils/api";
 
 export const revalidate = 5;
 
 export default async function Home() {
   const home = await getHome();
+  console.log("home  --------------->", home.data?.attributes?.accordion);
 
-  
   return (
     <main className={s.main}>
       <h1 className={s.title}>{home.data?.attributes.Title}</h1>
@@ -55,6 +56,25 @@ export default async function Home() {
           </a>
         </div>
       </div>
+
+      <VerticalAccordion
+        sections={home.data?.attributes?.accordion.map((el) => {
+          return {
+            backgroundColor: el.backgroundColor,
+            description: el.description,
+            detailsLink: el.detailsLink,
+            detailsText: el.detailsText,
+            img: BASE_FILE_URL + el.img.data?.attributes.url,
+            title: el.title,
+            items: el.textWithIcon.map((text) => {
+              return {
+                icon: text.icon.name,
+                title: text.text,
+              };
+            }),
+          };
+        })}
+      />
     </main>
   );
 }

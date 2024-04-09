@@ -10,15 +10,13 @@ import Icon from "../Icon";
 
 export default async function Header() {
   const header = await getHeader();
-  console.log("header?.data?.attributes", header?.data?.attributes);
 
   return (
     <div className={s.header}>
-      <Link href="/">
+      <Link href="/" className={s.headerLogo}>
         <img
           alt=""
-          width={100}
-          height={50}
+          className={s.headerLogoImg}
           src={
             BASE_FILE_URL + header?.data?.attributes.Logo.data.attributes?.url
           }

@@ -1,9 +1,17 @@
 .footer {
+  background-color: #f5f8fb;
+  padding: 20px;
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 20px;
-  background-color: #f5f8fb;
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  margin: 0 10px;
+  border-left: 1px solid #000;
+  height: 20px;
 }

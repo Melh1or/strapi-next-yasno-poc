@@ -1,0 +1,67 @@
+.verticalAccordion {
+  display: flex;
+  gap: 40px;
+}
+
+.verticalAccordionEl {
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+}
+
+.verticalAccordionElActive {
+}
+
+.verticalAccordionContent {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.verticalAccordionEl h2 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  text-align: left;
+  color: #132430;
+  margin-bottom: 10px;
+}
+
+.verticalAccordionEl p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #132430;
+  margin-bottom: 20px;
+}
+
+.verticalAccordionList {
+  flex: 1;
+}
+
+.verticalAccordionList h3 {
+  flex: 1;
+}
+
+.verticalAccordionListItem {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.verticalAccordionLink {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.verticalAccordionListItemIcon {
+  width: 20px;
+  height: 20px;
+}

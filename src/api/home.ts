@@ -10,6 +10,25 @@ interface Image {
   };
 }
 
+interface TextWithIcon {
+  id: number;
+  text: string;
+  icon: {
+    name: any;
+  };
+}
+
+interface Accordion {
+  id: number;
+  title: string;
+  description: string;
+  detailsLink: string;
+  detailsText: string;
+  backgroundColor: string;
+  img: Image;
+  textWithIcon: TextWithIcon[];
+}
+
 export type GetRestaurantsResponse = {
   data: {
     id: 1;
@@ -42,12 +61,23 @@ export type GetRestaurantsResponse = {
 
       ApproachTitle: string;
       ApproachSubtitle: string;
+
+      accordion: Accordion[];
     };
   };
 };
 
 export const getHome = (): Promise<GetRestaurantsResponse> => {
-  return api(
-    "/homepage?populate[Image][populate]=*&populate[QuoteImage][populate]=*&populate=*"
-  );
+  const populates = [
+    "Image",
+    "QuoteImage",
+    "accordion",
+    "accordion.img",
+    "accordion.textWithIcon",
+    "accordion.textWithIcon.icon",
+  ]
+    .map((populate, i) => `populate[${i}]=${populate}`)
+    .join("&");
+
+  return api("/homepage" + "?" + populates);
 };

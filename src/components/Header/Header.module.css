@@ -9,9 +9,19 @@
   padding: 20px;
 }
 
+.headerLogo {
+  max-width: 100px;
+  width: 100%;
+}
+
 .logo {
   width: 140px;
   height: 40px;
+}
+
+.headerLogoImg {
+  width: 100%;
+  object-fit: cover;
 }
 
 .nav {

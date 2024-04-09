@@ -1,14 +1,18 @@
-import s from './Footer.module.css'
+import { getCopyright } from "@/api/copyright";
+import s from "./Footer.module.css";
 
-const Footer = () => {
+const Footer = async () => {
+  const copyright = await getCopyright();
+
   return (
-    <footer>
+    <footer className={s.footer}>
       <div className={s.container}>
-        <div>2024 Yasno</div>
-        <div>Політика конфіденційності</div>
+        <div>{copyright.data.attributes.left}</div>
+        <div className={s.separator} />
+        <div>{copyright.data.attributes.right}</div>
       </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
