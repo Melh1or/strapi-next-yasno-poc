@@ -2,6 +2,8 @@ import { getBlackoutSchedule } from "@/api/blackoutSchedule";
 import Icon from "../Icon";
 import s from "./BlackoutSchedule.module.css";
 
+export const revalidate = 5;
+
 export default async function BlackoutSchedule() {
   const blackoutSchedule = await getBlackoutSchedule();
 

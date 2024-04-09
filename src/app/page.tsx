@@ -7,7 +7,6 @@ export const revalidate = 5;
 
 export default async function Home() {
   const home = await getHome();
-  console.log(home.data?.attributes.Image?.data.attributes.url);
 
   return (
     <main className={s.main}>
