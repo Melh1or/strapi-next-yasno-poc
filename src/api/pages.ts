@@ -12,5 +12,5 @@ export interface PageResponse {
 }
 
 export const getPage = (title: string): Promise<PageResponse> => {
-  return api(`/pages?filters[Title][$eqi]=${title}&populate=*`);
+  return api(`/pages?populate=*&filters[uri][$eqi]=${title}`);
 };
