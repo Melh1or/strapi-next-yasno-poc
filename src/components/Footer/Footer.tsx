@@ -1,6 +1,8 @@
 import { getCopyright } from "@/api/copyright";
 import s from "./Footer.module.css";
 
+export const revalidate = 5;
+
 const Footer = async () => {
   const copyright = await getCopyright();
 
