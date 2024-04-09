@@ -55,26 +55,6 @@ export default async function Home() {
           </a>
         </div>
       </div>
-
-      {/* <div className={s.quote}>
-        <h3 className={s.quoteTitle}>{home.data?.attributes.QuoteTitle}</h3>
-        <p className={s.quoteSubtitle}>{home.data?.attributes.QuoteSubTitle}</p>
-
-        <div className={s.quoteInner}>
-          <blockquote>
-            <cite>{home.data?.attributes.QuoteAuthor}</cite>
-            <p className={s.quoteText}>{home.data?.attributes.Quote}</p>
-          </blockquote>
-
-          <img
-            className={s.quoteImg}
-            src={
-              BASE_FILE_URL +
-              home.data?.attributes.QuoteImage?.data?.attributes.url
-            }
-          />
-        </div>
-      </div> */}
     </main>
   );
 }
