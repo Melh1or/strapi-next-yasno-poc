@@ -8,6 +8,7 @@ export const revalidate = 5;
 export default async function Home() {
   const home = await getHome();
 
+  
   return (
     <main className={s.main}>
       <h1 className={s.title}>{home.data?.attributes.Title}</h1>
