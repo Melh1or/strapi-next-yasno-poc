@@ -1,5 +1,6 @@
 import { getPage } from "@/api/pages";
 import ComponentFactory from "@/components/ComponentFactory";
+import s from "./page.module.css";
 
 interface PageProps {
   params: {
@@ -14,7 +15,7 @@ export default async function Page({ params: { slug } }: PageProps) {
   const [page] = response.data;
 
   return (
-    <div>
+    <div className={s.container}>
       <h1>Page - {slug}</h1>
       <h2>{page?.attributes.Title}</h2>
 
