@@ -26,17 +26,22 @@ export type GetRestaurantsResponse = {
       CabinetDescription: string;
       CabinetButton: string;
       CabinetLink: string;
+      CabinetIcon: any;
 
       AccountTitle: string;
       AccountDescription: string;
       AccountButton: string;
       AccountLink: string;
+      AccountIcon: any;
 
       QuoteTitle: string;
       QuoteSubTitle: string;
       QuoteAuthor: string;
       Quote: string;
       QuoteImage: Image;
+
+      ApproachTitle: string;
+      ApproachSubtitle: string;
     };
   };
 };

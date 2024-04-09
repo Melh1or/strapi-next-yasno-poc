@@ -4,6 +4,7 @@ export enum ComponentType {
   LINK = "shared.link",
   MENU = "shared.menu",
   TEXT = "shared.text",
+  HTML_CSS_TEMPLATE = "shared.html-css-template",
 }
 
 export interface LinkProps {
@@ -11,6 +12,13 @@ export interface LinkProps {
   __component: ComponentType.LINK;
   Title: string;
   To: string;
+}
+
+export interface HtmlCssTemplateProps {
+  id: 1;
+  __component: "shared.html-css-template";
+  Html: string;
+  Css: string;
 }
 
 export interface MenuProps {
@@ -32,7 +40,11 @@ export interface TextProps {
   color: string;
 }
 
-export type ComponentProps = LinkProps | MenuProps | TextProps;
+export type ComponentProps =
+  | LinkProps
+  | MenuProps
+  | TextProps
+  | HtmlCssTemplateProps;
 
 export interface StrapiFindManyResponseDto<T> {
   data: T[];

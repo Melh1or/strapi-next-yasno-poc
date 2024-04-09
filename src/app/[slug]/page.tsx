@@ -11,6 +11,7 @@ export default async function Page({ params: { slug } }: PageProps) {
   const response = await getPage(slug);
   const [page] = response.data;
   console.log(page);
+  console.log(page?.attributes.Content);
 
   return (
     <div>

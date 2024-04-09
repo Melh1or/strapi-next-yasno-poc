@@ -2,6 +2,7 @@ import { ComponentProps, ComponentType } from "@/types";
 import Link from "./Link";
 import Menu from "./Menu";
 import Text from "./Text";
+import HtmlCssTemplate from "./HtmlCssTemplate";
 
 const ComponentFactory = (props: ComponentProps) => {
   switch (props.__component) {
@@ -11,6 +12,8 @@ const ComponentFactory = (props: ComponentProps) => {
       return <Menu {...props} />;
     case ComponentType.TEXT:
       return <Text {...props} />;
+    case ComponentType.HTML_CSS_TEMPLATE:
+      return <HtmlCssTemplate {...props} />;
     default:
       return null;
   }

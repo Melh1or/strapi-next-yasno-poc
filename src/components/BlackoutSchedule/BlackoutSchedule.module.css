@@ -1,0 +1,39 @@
+.container {
+  background-color: #f4f6f9;
+  padding: 10px;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* font-family: YasnoRaleway; */
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: #132430;
+}
+
+.link {
+  padding-left: 20px;
+
+  /* font-family: YasnoRaleway; */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.closeButton {
+  position: absolute;
+  right: 40px;
+}

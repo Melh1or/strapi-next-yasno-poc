@@ -2,28 +2,22 @@
 
 import { MenuProps } from "@/types";
 import { useState } from "react";
+import s from "./Menu.module.css";
+import Icon from "../Icon";
 
 const Menu = ({ Title, Menu }: MenuProps) => {
   const [visible, setVisible] = useState(false);
 
   return (
     <div
+      className={s.menu}
       style={{ display: "inline-block", position: "relative" }}
       onMouseMove={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >
-      {Title}
-
+      {Title} <Icon name="IconHomeBold" />
       {visible && (
-        <ul
-          style={{
-            position: "absolute",
-            backgroundColor: "white",
-            padding: "1rem",
-            border: "1px solid black",
-            bottom: -70,
-          }}
-        >
+        <ul className={s.menuDropdown}>
           {Menu.map((item) => (
             <li key={item.id}>
               <a href={item.To}>{item.Title}</a>

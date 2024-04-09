@@ -9,9 +9,23 @@
   padding: 20px;
 }
 
+.logo {
+  width: 140px;
+  height: 40px;
+}
+
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.linkIcon {
+  margin-left: 5px;
 }
