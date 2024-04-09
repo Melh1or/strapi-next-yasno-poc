@@ -17,6 +17,8 @@ export default async function Header() {
       <Link href="/">
         <img
           alt=""
+          width={100}
+          height={50}
           src={
             BASE_FILE_URL + header?.data?.attributes.Logo.data.attributes?.url
           }

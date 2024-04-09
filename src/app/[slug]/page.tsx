@@ -7,6 +7,8 @@ interface PageProps {
   };
 }
 
+export const revalidate = 5;
+
 export default async function Page({ params: { slug } }: PageProps) {
   const response = await getPage(slug);
   const [page] = response.data;
